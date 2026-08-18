@@ -1,0 +1,2 @@
+# 本项目零第三方依赖，仅用 Python 标准库。保持此文件为空即可。
+# Render 在执行 pip install -r requirements.txt 时不会安装任何东西。
