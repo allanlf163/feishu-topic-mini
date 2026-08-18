@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: feishu-topic-mini
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    healthCheckPath: /
+    envVars:
+      # 以下四项为飞书/手机鉴权密钥，务必在 Render 控制台的 Environment 里手动填写（sync: false 表示不写进仓库）
+      - key: FEISHU_APP_TOKEN
+        sync: false
+      - key: FEISHU_TABLE_ID
+        sync: false
+      - key: FEISHU_PBT
+        sync: false
+      - key: PHONE_TOKEN
+        sync: false
+      # 以下为固定值，可直接用
+      - key: FEISHU_DOMAIN
+        value: "base-api.feishu.cn"
+      - key: ENABLE_ENRICH
+        value: "true"
+      - key: ENABLE_ASR
+        value: "false"
+    # PORT 由 Render 自动注入，无需设置
