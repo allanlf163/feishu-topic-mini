@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI 配图"
+  short_description: "公众号与小红书 AI 配图规划和生图工作流"
+  default_prompt: "使用 $ai-content-image 为一篇公众号或小红书内容规划并生成 AI 配图。"
